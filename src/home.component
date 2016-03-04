@@ -1,0 +1,51 @@
+<can-component tag="chat-home">
+  <style type="less">
+    display: block;
+
+    bit-panel p {
+      padding: 10px;
+    }
+
+    p { font-weight: bold; }
+    h1.page-header { margin-top: 0; }
+  </style>
+  <template>
+    <!-- Invoco las bit-tabs -->
+    <can-import from="bit-tabs/unstyled" />
+
+    <!-- Title - view the donejs image - Add more things for the view immediately :P -->
+    <h1 class="page-header text-center">
+      <img src="http://donejs.com/static/img/donejs-logo-white.svg"
+           alt="DoneJS logo" style="width: 100%;" />
+      <br>Chat
+    </h1>
+
+    <!-- Needs to reload @_@ -->
+    <bit-tabs tabs-class="nav nav-tabs">
+      <bit-panel title="CanJS">
+        <p>CanJS provides the MV*</p>
+      </bit-panel>
+      <bit-panel title="StealJS">
+        <p>StealJS provides the infrastructure.</p>
+      </bit-panel>
+    </bit-tabs>
+
+
+    <a href="{{routeUrl page='chat' }}"
+       class="btn btn-primary btn-block btn-lg">
+      Start chat
+    </a>
+  </template>
+  <script type="view-model">
+    import Map from 'can/map/';
+    import 'can/map/define/';
+
+    export default Map.extend({
+      define: {
+        message: {
+          value: 'This is the chat-home component'
+        }
+      }
+    });
+  </script>
+</can-component>
