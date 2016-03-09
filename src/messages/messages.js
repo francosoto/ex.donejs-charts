@@ -9,22 +9,19 @@ export const ViewModel = Map.extend({
 	send(event) {
 		event.preventDefault();
 
-		new Message(
-			{
-				name: 	this.attr('name')
-			,	body: 	this.attr('body')
-			}
-		).save().then(
-			msg => this.attr('body','')
-		)
+		new Message({
+			name: this.attr('name')
+		,	body: this.attr('body')
+		}).save().then(msg => this.attr('body',''))
 	}
+// ,	delete(event) {
+// 		event.preventDefault();
+// 		console.log("estoy borrando")
+// 	}
 });
 
-route('/:page',{ page:'home' });
-
 export default Component.extend({
-  // tag: 'chat-messages',
-  tag: 'chat-messages'
+  tag: 'chat-messages',
   viewModel: ViewModel,
   template
 });

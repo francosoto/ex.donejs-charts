@@ -1,6 +1,7 @@
 <can-import from="donejs-chat/models/message" />
 <h5><a href="{{routeUrl page='home'}}">Home</a></h5>
 
+<!-- list - msg -->
 <message-model get-list="{}" class="list-group">
   {{#each ./value}}
     <div class="list-group-item">
@@ -14,6 +15,7 @@
   {{/each}}
 </message-model>
 
+<!-- form - send chat -->
 <form class="row" ($submit)="send(%event)">
   <div class="col-sm-3">
     <input type="text" class="form-control" placeholder="Your name"
